@@ -1,0 +1,13 @@
+name: Use Hello World action
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Hello world action step
+      uses: ./.github/actions/hello-world
+      with:
+        who-to-greet: 'GitHub Actions'
