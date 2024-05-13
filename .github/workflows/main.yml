@@ -8,6 +8,6 @@ jobs:
 
     steps:
     - name: Hello world action step
-      uses: ./.github/actions/hello-world
+      uses: ./.github/actions/hello-world-action
       with:
         who-to-greet: 'GitHub Actions'
