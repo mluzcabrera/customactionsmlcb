@@ -10,6 +10,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Hello world action step
+      id: hello
       uses: actions/hello-world-action@main
       with:
         who-to-greet: 'Mariluz'
+    - name: Print output
+      run: echo "The greeting was ${{ steps.hello.outputs.time }}"
+   
