@@ -1,0 +1,13 @@
+name: 'Hello World'
+description: 'Prints "Hello, world!" to the console'
+
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+
+runs:
+  using: 'shell'
+  command: |
+    echo "Hello, ${{ inputs.who-to-greet }}"
