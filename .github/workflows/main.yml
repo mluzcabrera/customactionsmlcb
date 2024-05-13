@@ -12,4 +12,4 @@ jobs:
     - name: Hello world action step
       uses: actions/hello-world-action@main
       with:
-        who-to-greet: 'GitHub Actions'
+        who-to-greet: 'Mariluz'
