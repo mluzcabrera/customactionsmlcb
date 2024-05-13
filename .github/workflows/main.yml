@@ -10,6 +10,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Hello world action step
-      uses: ./actions/hello-world-action@main
+      uses: ./../actions/hello-world-action@main
       with:
         who-to-greet: 'GitHub Actions'
