@@ -17,12 +17,12 @@ jobs:
           echo "Starting the wf"
       - name: Hello world action step plat
         id: hello2
-        uses: mluzcabrera/customactions/.cloudbees/actions/hello-world-action
+        uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action
         with:
           who-to-greet: 'Mariluz'
       - name: Hello world action step gha
         id: hello
-        uses: mluzcabrera/customactions/.github/actions/hello-world-action
+        uses: mluzcabrera/customactionsmlcb/.github/actions/hello-world-action
         with:
           who-to-greet: 'Mariluz'
       - name: Print output
