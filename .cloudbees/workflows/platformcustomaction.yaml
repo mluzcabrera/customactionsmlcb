@@ -15,8 +15,6 @@ jobs:
         shell: sh
         run: |
           echo "Starting the wf"
-      - name: Checkout code
-        uses: actions/checkout@v4
       - name: Hello world action step
         id: hello
         uses: actions/hello-world-action@main
