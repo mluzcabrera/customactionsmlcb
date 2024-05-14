@@ -14,5 +14,10 @@ outputs:
     description: 'The time we greeted you'
 
 runs:
-  using: 'node20'
-  main: 'index.js'
+  using: composite
+  steps:
+    - id: action-step
+      uses: docker://alpine:3.17
+      shell: sh
+      run: |
+        echo "Hello from action."
