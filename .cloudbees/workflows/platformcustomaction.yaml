@@ -13,3 +13,5 @@ jobs:
       - name: Hello world custom platform action
         id: hello
         uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action
+        with:
+           who-to-greet: 'Mariluz'
