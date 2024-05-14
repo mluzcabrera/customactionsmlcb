@@ -14,4 +14,15 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "hello world"
+          echo "Starting the wf"
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Hello world action step
+        id: hello
+        uses: actions/hello-world-action@main
+        with:
+          who-to-greet: 'Mariluz'
+      - name: Print output
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: echo "The greeting was ${{ steps.hello.outputs.time }}"
