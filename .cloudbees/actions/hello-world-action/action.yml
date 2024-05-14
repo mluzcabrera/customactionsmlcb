@@ -1,8 +1,7 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: action
 
-name: hello-world-action
-
+name: hello-action
 runs:
   using: composite
   steps:
