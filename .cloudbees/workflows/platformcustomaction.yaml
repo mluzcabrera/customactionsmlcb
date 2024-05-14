@@ -15,7 +15,12 @@ jobs:
         shell: sh
         run: |
           echo "Starting the wf"
-      - name: Hello world action step
+      - name: Hello world action step plat
+        id: hello2
+        uses: mluzcabrera/customactions/.cloudbees/actions/hello-world-action
+        with:
+          who-to-greet: 'Mariluz'
+      - name: Hello world action step gha
         id: hello
         uses: mluzcabrera/customactions/.github/actions/hello-world-action
         with:
@@ -23,4 +28,4 @@ jobs:
       - name: Print output
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
-        run: echo "The greeting was ${{ steps.hello.outputs.time }}"
+        run: echo "The greeting was ${{ steps.hello2.outputs.time }}"
