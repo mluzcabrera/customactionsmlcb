@@ -12,17 +12,4 @@ outputs:
     value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: node20
-  steps:
-    - id: action-step
-      name: Custom Action step 1 action-step
-      uses: docker://alpine:3.17
-      shell: sh
-      run: |
-        echo "Hello from action ${{inputs.who-to-greet}}"
-    - id: random-number-generator
-      name: Custom Action step 2 random-number-generator
-      uses: docker://alpine:3.17
-      shell: sh
-      run: |
-        echo "$RANDOM" >> "$CLOUDBEES_OUTPUTS/random-number"
-        echo "Generated random output"
+  main: 'index.js'
