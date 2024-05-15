@@ -1,23 +1,21 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
-
 on:
   push:
     branches:
-      - '**'
-
+      - "**"
 jobs:
-  build:
+  invokecustom:
     steps:
-      - name: Hello world custom platform action
+      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action
+        name: Hello world custom platform action
         id: hello
-        uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action
         with:
-           who-to-greet: 'Mariluz'
-      - name: Print output from custom action
+          who-to-greet: Mariluz
+      - uses: docker://alpine:3.17
+        name: Print output from custom action
         id: print-output
-        uses: docker://alpine:3.17
         shell: sh
-        run: | 
+        run: |
           echo ${{ steps.hello.outputs.random-number }}
