@@ -6,6 +6,10 @@ inputs:
   who-to-greet:
     description: 'Who to greet?'
     required: true
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: composite
   steps:
@@ -14,3 +18,7 @@ runs:
       shell: sh
       run: |
         echo "Hello from action ${{inputs.who-to-greet}}"
+    - id: random-number-generator
+      uses: docker://alpine:3.17
+      shell: sh
+      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
