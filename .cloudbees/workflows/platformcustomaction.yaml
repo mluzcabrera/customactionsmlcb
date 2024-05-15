@@ -21,9 +21,9 @@ jobs:
           echo ${{ steps.hello.outputs.random-number }}
   invokecustomjavascript:
     steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          echo "hello world"
+      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action-js
+        name: Hello world custom platform action JS
+        id: hello-js
+        with:
+          who-to-greet: MariluzJS
 
