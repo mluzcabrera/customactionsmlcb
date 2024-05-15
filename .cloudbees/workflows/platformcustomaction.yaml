@@ -15,3 +15,9 @@ jobs:
         uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action
         with:
            who-to-greet: 'Mariluz'
+      - name: Print output from custom action
+        id: print-output
+        uses: docker://alpine:3.17
+        shell: sh
+        run: | 
+          echo ${{ steps.hello.outputs.random-number }}
