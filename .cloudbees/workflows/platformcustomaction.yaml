@@ -1,6 +1,6 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
-name: My workflow
+name: Platform custom action COMPOSITE
 on:
   push:
     branches:
@@ -19,18 +19,3 @@ jobs:
         shell: sh
         run: |
           echo ${{ steps.hello.outputs.random-number }}
-  invokecustomjavascript:
-    steps:
-      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action-js
-        name: Hello world custom platform action JS
-        id: hello-js
-        with:
-          who-to-greet: MariluzJS
-  invokecustomdocker:
-    steps:
-      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action-docker
-        name: Hello world custom platform action DOCKER
-        id: hello-docker
-        with:
-          who-to-greet: MariluzDOCKER
-
