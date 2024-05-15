@@ -1,7 +1,7 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: action
 
-name: hello-action
+name: hello-action-js
 inputs:
   who-to-greet:
     description: 'Who to greet?'
