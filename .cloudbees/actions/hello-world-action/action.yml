@@ -23,4 +23,6 @@ runs:
       name: Custom Action step 2 random-number-generator
       uses: docker://alpine:3.17
       shell: sh
-      run: echo "$RANDOM" >> "$CLOUDBEES_OUTPUTS/random-number"
+      run: |
+        echo "$RANDOM" >> "$CLOUDBEES_OUTPUTS/random-number"
+        echo "Generated random output"
