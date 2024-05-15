@@ -6,7 +6,7 @@ on:
     branches:
       - "**"
 jobs:
-  invokecustom:
+  invokecustomcomposite:
     steps:
       - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action
         name: Hello world custom platform action
@@ -19,3 +19,11 @@ jobs:
         shell: sh
         run: |
           echo ${{ steps.hello.outputs.random-number }}
+  invokecustom:
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "hello world"
+
