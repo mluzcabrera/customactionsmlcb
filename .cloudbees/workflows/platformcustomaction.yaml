@@ -26,4 +26,11 @@ jobs:
         id: hello-js
         with:
           who-to-greet: MariluzJS
+  invokecustomdocker:
+    steps:
+      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action-docker
+        name: Hello world custom platform action DOCKER
+        id: hello-docker
+        with:
+          who-to-greet: MariluzDOCKER
 
