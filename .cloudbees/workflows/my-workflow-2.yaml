@@ -1,0 +1,17 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  invokecustomdocker:
+    steps:
+      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action-docker
+        name: Hello world custom platform action DOCKER
+        id: hello-docker
+        with:
+          who-to-greet: MariluzDOCKER
+
+
