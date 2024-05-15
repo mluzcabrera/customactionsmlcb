@@ -1,0 +1,16 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  invokecustomjavascript:
+    steps:
+      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/hello-world-action-js
+        name: Hello world custom platform action JS
+        id: hello-js
+        with:
+          who-to-greet: MariluzJS
+
