@@ -6,7 +6,7 @@ on:
 jobs:
   invokecustomcomposite:
     steps:
-      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/always-action
+      - uses: mluzcabrera/customactionsmlcb/.cloudbees/actions/alwaysaction
         name: Always
         id: hello
         with:
